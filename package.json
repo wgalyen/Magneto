@@ -2,30 +2,29 @@
   "name": "magneto",
   "version": "1.0.0",
   "description": "",
-  "umd:main": "lib/magneto.min.js",
-  "umd:name": "magneto",
-  "module": "lib/magneto.es.js",
-  "main": "lib/magneto.js",
+  "author": "Warren Galyen",
+  "license": "MIT",
   "directories": {
     "lib": "lib"
+  },
+  "scripts": {
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wgalyen/magneto.git"
   },
-  "scripts": {
-    "build": "node build"
-  },
-  "author": "Warren Galyen",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/wgalyen/magneto/issues"
   },
   "homepage": "https://github.com/wgalyen/magneto#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.13",
     "fs": "0.0.1-security",
     "rollup": "^2.38.4",
-    "rollup-plugin-buble": "^0.19.8",
-    "uglify-js": "^3.12.6"
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
