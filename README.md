@@ -1,5 +1,20 @@
 <h1 align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+  <a href="https://github.com/wgalyen/magneto"><img width="200" src="/docs/assets/img/magneto.png">
+  </a>
    <br>
    Magneto
  </h1>
+
+## Getting started
+
+### Download
+
+[download](https://github.com/wgalyen/magneto/archive/master.zip).
+
+### Usage
+
+#### ES6 modules
+
+```javascript
+import Magneto from 'magneto/lib/magneto.es.js';
+```
