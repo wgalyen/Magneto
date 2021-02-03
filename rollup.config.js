@@ -4,6 +4,7 @@ import multiEntry from 'rollup-plugin-multi-entry';
 import commonjs from 'rollup-plugin-commonjs';
 
 let outputFolder = 'lib/';
+let outputDocsFolder = 'docs/';
 let inputFolder = 'src/';
 let name = 'Magneto';
 
@@ -24,6 +25,14 @@ export default [
         input: inputFolder + 'index.js',
         output: {
             file: outputFolder + 'magneto.es.js',
+            format: 'iife',
+            name: name
+        }
+    },
+    {
+        input: inputFolder + 'index.js',
+        output: {
+            file: outputDocsFolder + 'magneto.es.js',
             format: 'iife',
             name: name
         }
