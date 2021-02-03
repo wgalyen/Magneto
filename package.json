@@ -5,6 +5,12 @@
   "module": "src/index.js",
   "description": "Magnet element using mouse",
   "author": "Warren Galyen",
+  "keywords": [
+    "animation",
+    "javascript",
+    "mouse",
+    "follow"
+  ],
   "license": "MIT",
   "directories": {
     "lib": "lib"
