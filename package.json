@@ -1,7 +1,9 @@
 {
   "name": "magneto",
   "version": "1.0.0",
-  "description": "",
+  "main": "lib/magneto.min.js",
+  "module": "src/index.js",
+  "description": "Magnet element using mouse",
   "author": "Warren Galyen",
   "license": "MIT",
   "directories": {
@@ -24,7 +26,6 @@
     "@babel/preset-env": "^7.12.13",
     "rollup": "^2.38.4",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2"
   }
