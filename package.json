@@ -20,7 +20,6 @@
   "homepage": "https://github.com/wgalyen/magneto#readme",
   "devDependencies": {
     "@babel/core": "^7.12.13",
-    "fs": "0.0.1-security",
     "rollup": "^2.38.4",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
