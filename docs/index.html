@@ -7,27 +7,33 @@
             background-color: #c5c5c5;
             height: calc(100vh + 300px);
         }
+
         .one {
             display: inline-block;
             margin-left: 50%;
         }
+
         .two {
             display: inline-block;
             margin-top: 50px;
             margin-left: 150px;
         }
+
         .block {
             display: block;
         }
+
         .magnet {
             cursor: default;
             padding: 20px;
             background-color: green;
             transition: all .3s ease;
         }
+
         .magneto-active {
             background-color: red;
         }
+
         .follow-mouse {
             position: fixed;
             z-index: 1000;
@@ -37,7 +43,7 @@
             height: 30px;
             border-radius: 100%;
             background-color: violet;
-            transition: all .1s ease-in-out;
+            transition: all .1s linear;
         }
     </style>
 </head>
@@ -49,21 +55,26 @@
     <div class="magnet one">Lorem Ipsum</div>
 </div>
 <div class="follow-mouse"></div>
-<script src="./magneto.es.js"></script>
+<script src="magneto.es.js"></script>
 <script>
     let mm = new Magneto({
-        elementMagnet: '.magnet',
-        activeClass: 'magneto-active',
-        elementFollow: '.follow-mouse',
         magnet: {
-            active: true,
+            element: '.magnet',
+            class: 'magneto-active',
+            distance: 20,
             position: 'center'
         },
-        activationDistance: 10,
-        throttle: 5,
+        follow: {
+            element: '.follow-mouse'
+        },
+        throttle: 10
     });
 
     mm.init();
+    setTimeout(function () {
+        mm.destroy();
+    }, 2000);
+
 </script>
 </body>
 </html>
