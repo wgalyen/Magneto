@@ -11,18 +11,36 @@
 
 [download](https://github.com/wgalyen/magneto/archive/master.zip).
 
-### Usage
+### Installation
 
-#### ES6 modules
+#### Import
 
 ```javascript
-import Magneto from 'magneto/lib/magneto.js';
+import Magneto from 'magneto';
+```
+
+### Require
+
+```javascript
+const magneto = require('magneto');
 ```
 
 #### File include
 
-Link `magneto.js` in your HTML :
+Link `magneto.min.js` in your HTML :
 
 ```html
-<script src=""magneto.js"></script>
+<script src="magneto.min.js"></script>
+```
+
+### Basic usage
+
+```javascript
+let m = new Magnetic({
+    magnet: {
+        element: '.magnet'
+    }
+});
+
+m.init();
 ```
