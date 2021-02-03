@@ -10,12 +10,13 @@ export default class Magneto {
             },
             activationDistance: 20,
             activeClass: 'magneto-active',
-            throttle: 50,
+            throttle: 10,
         };
 
         this.config = {...defaults, ...config};
     }
 
+    // Avoid consecutive calls by introducing a delay.
     static throttle(callback, delay) {
         let last;
         let timer;
@@ -36,6 +37,7 @@ export default class Magneto {
         };
     };
 
+    // Return position X and Y of mouse
     static getPositionMouse(e) {
         let mouseX = e.pageX;
         let mouseY = e.pageY;
@@ -46,6 +48,7 @@ export default class Magneto {
         };
     };
 
+    // Return position of each element
     getPositionElement() {
         let $this = this;
         let element = document.querySelectorAll(this.config.element);
@@ -141,14 +144,12 @@ export default class Magneto {
     init() {
         let posMouse, posElement, $this = this;
 
-        window.addEventListener('resize', Magneto.throttle(() => {
+        this.resizeFunction = MagnetMouse.throttle(() => {
             posElement = $this.getPositionElement();
 
-        }, $this.config.throttle));
+        }, $this.config.throttle);
 
-        posElement = $this.getPositionElement();
-
-        window.addEventListener('mousemove', Magneto.throttle((e) => {
+        this.mouseFunction = MagnetMouse.throttle((e) => {
             posMouse = Magneto.getPositionMouse(e);
 
             if ($this.config.magnet.active) {
@@ -157,6 +158,24 @@ export default class Magneto {
                 $this.hoverElement(posElement, posMouse);
             }
 
-        }, $this.config.throttle));
+        }, $this.config.throttle);
+
+        window.addEventListener('resize', this.resizeFunction);
+        posElement = $this.getPositionElement();
+
+        window.addEventListener('mousemove', this.mouseFunction);
+    }
+
+    destroy() {
+        window.removeEventListener('mousemove', this.mouseFunction);
+        window.removeEventListener('resize', this.resizeFunction);
+
+        let elements = document.querySelectorAll(this.config.element);
+        let $this = this;
+
+        elements.forEach(function (element) {
+            element.classList.remove($this.config.activeClass);
+            element.style.transform = '';
+        });
     }
 }
