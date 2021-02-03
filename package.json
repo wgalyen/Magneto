@@ -1,0 +1,28 @@
+{
+  "name": "magneto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/magneto.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wgalyen/magneto.git"
+  },
+  "author": "Warren Galyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wgalyen/magneto/issues"
+  },
+  "homepage": "https://github.com/wgalyen/magneto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "latest"
+  }
+}
