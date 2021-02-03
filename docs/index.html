@@ -55,11 +55,12 @@
     <div class="magnet one">Lorem Ipsum</div>
 </div>
 <div class="follow-mouse"></div>
-<script src="magneto.es.js"></script>
+<script src="assets/js/magneto.es.js"></script>
 <script>
-    let mm = new Magneto({
+    let m = new Magneto({
         magnet: {
             element: '.magnet',
+            active: false,
             class: 'magneto-active',
             distance: 20,
             position: 'center'
@@ -70,10 +71,7 @@
         throttle: 10
     });
 
-    mm.init();
-    setTimeout(function () {
-        mm.destroy();
-    }, 2000);
+    m.init();
 
 </script>
 </body>
