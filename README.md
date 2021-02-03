@@ -16,5 +16,13 @@
 #### ES6 modules
 
 ```javascript
-import Magneto from 'magneto/lib/magneto.es.js';
+import Magneto from 'magneto/lib/magneto.js';
+```
+
+#### File include
+
+Link `magneto.js` in your HTML :
+
+```html
+<script src=""magneto.js"></script>
 ```

@@ -8,7 +8,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,11 @@
   "homepage": "https://github.com/wgalyen/magneto#readme",
   "devDependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "rollup": "^2.38.4",
-    "rollup-plugin-babel": "^4.4.0"
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
